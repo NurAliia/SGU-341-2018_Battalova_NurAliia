@@ -11,8 +11,15 @@ namespace Task1
         static void Main(string[] args)
         {
             RWStream stream = new RWStream();
-            Triangle triangle = stream.ReadTriangleFromFile("input.txt");
-            stream.WriteToFile($"Square = {triangle.Square} { Environment.NewLine}Perimeter = { triangle.Perimeter}");
+            try
+            {
+                Triangle triangle = stream.ReadTriangleFromFile("input.txt");
+                stream.WriteToFile($"Perimeter = {triangle.Perimeter} { Environment.NewLine}Square = {triangle.Square}");                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

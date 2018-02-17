@@ -37,7 +37,7 @@ namespace Task1
             catch (FileNotFoundException e)
             {
                 Console.WriteLine("Exception " + e.Message);
-
+                throw e;
             }
             catch (IOException e)
             {
